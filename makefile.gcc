@@ -1,0 +1,11 @@
+CC=gcc
+CFLAGS=-Wall -O3 -ftree-vectorizer-verbose=2
+TARGET=vec_add_gcc
+
+$(TARGET) : add.c
+	$(CC) -o $@ $< $(CFLAGS)
+
+.PHONY: clean
+
+clean :
+	rm -f $(TARGET)
